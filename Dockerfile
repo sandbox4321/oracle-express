@@ -8,7 +8,7 @@ RUN yum update && \
     INSTALL_PKGS="bc net-tools wget sudo unzip" && \
     yum install -y --setopt=tsflags=nodocs $INSTALL_PKGS && \
     rpm -V $INSTALL_PKGS && \
-    wget http://download.oracle.com/otn/linux/oracle11g/xe/oracle-xe-11.2.0-1.0.x86_64.rpm.zip && \ 
+    wget http://download.oracle.com/otn/linux/oracle11g/xe/oracle-xe-11.2.0-1.0.x86_64.rpm.zip?AuthParam=1456222120_a51546f6831c1428ed63ec34430c5d85 && \ 
     unzip oracle-xe-11.2.0-1.0.x86_64.rpm.zip
     yum install -y ./oracle-xe-11.2.0-1.0.x86_64.rpm && \
     yum clean all -y
