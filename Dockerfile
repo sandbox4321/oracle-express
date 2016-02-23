@@ -1,13 +1,11 @@
 # oracle-builder
 
-FROM registry.access.redhat.com/rhel7
+FROM openshift/base-centos7
 
 EXPOSE 1521
 
-RUN yum-config-manager --enable rhel-server-rhscl-7-rpms && \
-    yum-config-manager --enable rhel-7-server-optional-rpms && \
-    yum-config-manager --disable epel >/dev/null || : && \
-    INSTALL_PKGS="bc net-tools sudo unzip" && \
+RUN yum update && \
+    INSTALL_PKGS="bc net-tools wget sudo unzip" && \
     yum install -y --setopt=tsflags=nodocs $INSTALL_PKGS && \
     rpm -V $INSTALL_PKGS && \
     wget http://download.oracle.com/otn/linux/oracle11g/xe/oracle-xe-11.2.0-1.0.x86_64.rpm.zip && \ 
