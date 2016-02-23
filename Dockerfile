@@ -10,7 +10,7 @@ RUN yum update && \
     rpm -V $INSTALL_PKGS && \
     wget 'https://www.googledrive.com/host/0B8Ullq6_B51jM3ZTdDFBWmNmX2s' -O oracle-xe-11.2.0-1.0.x86_64.rpm.zip -q --show-progress && \ 
     unzip oracle-xe-11.2.0-1.0.x86_64.rpm.zip && \
-    yum install -y /u01/download/Disk1/oracle-xe-11.2.0-1.0.x86_64.rpm && \
+    yum install -y ./Disk1/oracle-xe-11.2.0-1.0.x86_64.rpm && \
     yum clean all -y
 
 RUN cp /u01/app/oracle/product/11.2.0/xe/network/admin/listener.ora /u01/app/oracle/product/11.2.0/xe/network/admin/listener.ora.tmpl && \    
