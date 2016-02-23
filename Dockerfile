@@ -8,9 +8,9 @@ RUN yum update && \
     INSTALL_PKGS="bc net-tools wget sudo unzip" && \
     yum install -y --setopt=tsflags=nodocs $INSTALL_PKGS && \
     rpm -V $INSTALL_PKGS && \
-    wget http://download.oracle.com/otn/linux/oracle11g/xe/oracle-xe-11.2.0-1.0.x86_64.rpm.zip?AuthParam=1456222120_a51546f6831c1428ed63ec34430c5d85 && \ 
+    wget http://download.oracle.com/otn/linux/oracle11g/xe/oracle-xe-11.2.0-1.0.x86_64.rpm.zip?AuthParam=1456222439_f108f9fd715c18f49eee3476c23f47f6 -O oracle-xe-11.2.0-1.0.x86_64.rpm.zip && \ 
     unzip oracle-xe-11.2.0-1.0.x86_64.rpm.zip
-    yum install -y ./oracle-xe-11.2.0-1.0.x86_64.rpm && \
+    yum install -y /u01/download/Disk1/oracle-xe-11.2.0-1.0.x86_64.rpm && \
     yum clean all -y
 
 RUN cp /u01/app/oracle/product/11.2.0/xe/network/admin/listener.ora /u01/app/oracle/product/11.2.0/xe/network/admin/listener.ora.tmpl && \    
